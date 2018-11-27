@@ -1,0 +1,16 @@
+#Aside {
+  width: 30%;
+  height: 100vh;
+  background-color: #bae4dd;
+  padding: 10px;
+}
+
+#Section {
+  width: 70%;
+  height: 100vh;
+  background-color: rgba(185, 184, 164, 0.582);
+}
+
+ul {
+  list-style-type: none;
+}
