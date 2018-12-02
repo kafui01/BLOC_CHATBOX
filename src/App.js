@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import * as firebase from "firebase";
 import RoomList from "./component/RoomList";
+import MessageList from "./component/MessageList";
 import "./chat.css";
 
 var config = {
@@ -14,14 +15,29 @@ var config = {
 firebase.initializeApp(config);
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeRoom: null
+    };
+    this.makeActiveRoom = this.makeActiveRoom.bind(this);
+  }
+
+  makeActiveRoom(room) {
+    this.setState({
+      activeRoom: room
+    });
+  }
+
   render() {
     return (
       <div className="container-fluid">
         <div className="float-left" id="Aside">
-          <RoomList myfirebase={firebase} />
+          <RoomList firebase={firebase} makeActiveRoom={this.makeActiveRoom} />
         </div>
         <div className="float-right" id="Section">
           <h2>MESSAGE SECTION</h2>
+          <MessageList firebase={firebase} activeRoom={this.state.activeRoom} />
         </div>
       </div>
     );
