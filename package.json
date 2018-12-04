@@ -1,7 +1,7 @@
 {
-  "name": "bloc-chatbox",
+  "name": "bloc-chatbox-createchatroommessage",
   "version": "1.0.0",
-  "description": "",
+  "description": "added messageList",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
